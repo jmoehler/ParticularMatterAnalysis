@@ -7,11 +7,10 @@ start = time.time()
 i=0
 o=0
 
-with open('./data/Stuttgart/clear_Halbstd-Werte-Stuttgart-Mitte-SZ_1987-2019(to30.4.).csv', 'w', newline='') as csvfile:
+with open('./data/Stuttgart/clear_S-Mitte-SZ-Halbstd-Werte_2019(bis 30.4.).csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=';')
 
-    for datafile in ['./data/Stuttgart/S-Mitte-SZ-Halbstd-Werte_2019(bis 30.4.).csv', 
-        './data/Stuttgart/S-Mitte-SZ-Halbstd-Werte_2019(bis 30.4.).csv']:
+    for datafile in ['./data/Stuttgart/S-Mitte-SZ-Halbstd-Werte_2019(bis 30.4.).csv']:
         with open(datafile,newline = '') as f:
             readers = csv.reader(f, delimiter= ';')
             for row in readers:
