@@ -31,6 +31,8 @@ with open(path,newline = '') as f:
         pass
       
 
+wertAllPM10 = 0
+wiedAll = 0
 
 for i in range(0, len(sPM10)):
         
@@ -53,6 +55,6 @@ print("Der Feinstaubwert (PM10) lag am 10.3.2017 bei %.2f μm pro m^3" %(durchWe
 print("Der Feinstaubwert (PM2_5) lag am 10.3.2017 bei %.2f μm pro m^3" %(durchWertPM2_5))
 end = time.time()
 diff = end-start
-print("Sec: %.2f" %(diff)) 
+print("Sec: %.4f" %(diff)) 
 
 
