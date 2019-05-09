@@ -2,7 +2,7 @@ import pathlib
 import csv
 import time
 
-start = time.time()
+
 
 y = 2017                #year
 m = 1                   #month
@@ -20,6 +20,8 @@ sPM2_5 = []
 sPM10 = []
 
 
+# Start der Zeit für die Zeitmessung
+start = time.time()
 
 with open(path,newline = '') as f:
     readers = csv.DictReader(f, delimiter= ';')
@@ -31,30 +33,39 @@ with open(path,newline = '') as f:
         pass
       
 
+# Anzahl der PM2_5 und PM10 Werte
+anzAll = 0
+
+# Summe aller addierten PM10 Werte
 wertAllPM10 = 0
-wiedAll = 0
+
 
 for i in range(0, len(sPM10)):
         
-    #PM10
+    #PM10 
     wertAllPM10 += sPM10[i]
-    wiedAll += 1
+    anzAll += 1
 
+# Summe aller addierten PM2_5 Werte
 wertAllPM2_5 = 0
 
 for i in range(0, len(sPM2_5)):
         
     #PM2_5
-    wertAllPM2_5 += sPM10[i]
+    wertAllPM2_5 += sPM2_5[i]
 
+# Durchschnittswert = Summe aller Werte durch Anzahl aller Werte
+durchWertPM10 = wertAllPM10 / anzAll
+durchWertPM2_5 = wertAllPM2_5 / anzAll
+
+# Ende der Zeit für die Zeitmessung
+end = time.time()
+
+# endzeit - Anfangszeit = benötigte Zeit
+diff = end-start
  
-durchWertPM10 = wertAllPM10 / wiedAll
-durchWertPM2_5 = wertAllPM2_5 / wiedAll
 
 print("Der Feinstaubwert (PM10) lag am 10.3.2017 bei %.2f μm pro m^3" %(durchWertPM10))
 print("Der Feinstaubwert (PM2_5) lag am 10.3.2017 bei %.2f μm pro m^3" %(durchWertPM2_5))
-end = time.time()
-diff = end-start
+
 print("Sec: %.4f" %(diff)) 
-
-
