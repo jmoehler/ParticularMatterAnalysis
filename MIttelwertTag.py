@@ -64,8 +64,7 @@ end = time.time()
 # endzeit - Anfangszeit = benötigte Zeit
 diff = end-start
  
-
-print("Der Feinstaubwert (PM10) lag am 10.3.2017 bei %.2f μm pro m^3" %(durchWertPM10))
-print("Der Feinstaubwert (PM2_5) lag am 10.3.2017 bei %.2f μm pro m^3" %(durchWertPM2_5))
+print("Der Feinstaubwert (PM10) lag am %d.%d.%d bei %.2f μm pro m^3" %(d,m,y,durchWertPM10))
+print("Der Feinstaubwert (PM2_5) lag am %d.%d.%d bei %.2f μm pro m^3" %(d,m,y,durchWertPM2_5))
 
 print("Sec: %.4f" %(diff)) 
