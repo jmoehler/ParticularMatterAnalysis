@@ -9,7 +9,7 @@ import datetime
 # die angaben
 year    = 2018               #year          
 sensor  =  299               #sensor
-quartal =    2             #quartal
+quartal =    4             #quartal
 
 
 # die Monate eines Quartals 
@@ -45,7 +45,8 @@ sPM2_5 = []
 sPM10 = []
 
 # Anzahl der PM2_5 und PM10 Werte
-anzAll = 0
+anzAllPM10 = 0
+anzAllPM2_5 = 0
 
 # Summe aller addierten PM10 Werte
 wertAllPM10 = 0
@@ -80,29 +81,31 @@ for y in [year]:
                         PM2_5 = float(row["P2"])
                         sPM10.append(PM10)
                         sPM2_5.append(PM2_5)
-                        pass
-                print(path)
+                        
+                
+                    print(path)
             except:
                 print("file %04d-%02d-%02d is not avalible" %(y,m,d))
                 
-                
 
-            for i in range(0, len(sPM10)):
-                    
-                #PM10 
-                wertAllPM10 += sPM10[i]
-                anzAll += 1
+for i in range(0, len(sPM10)):
 
+    #PM10 
+    wertAllPM10 += sPM10[i]
+    anzAllPM10 += 1
 
 
-            for i in range(0, len(sPM2_5)):
-                    
-                #PM2_5
-                wertAllPM2_5 += sPM2_5[i]
 
+for i in range(0, len(sPM2_5)):
+    
+    #PM2_5
+    wertAllPM2_5 += sPM2_5[i]
+    anzAllPM2_5 += 1                
+
+           
 # Durchschnittswert = Summe aller Werte durch Anzahl aller Werte
-durchWertPM10 = wertAllPM10 / anzAll
-durchWertPM2_5 = wertAllPM2_5 / anzAll
+durchWertPM10 = wertAllPM10 / anzAllPM10
+durchWertPM2_5 = wertAllPM2_5 / anzAllPM2_5
 
 # Ende der Zeit für die Zeitmessung
 end = time.time()
