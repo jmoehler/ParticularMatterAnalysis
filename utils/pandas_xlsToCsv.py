@@ -2,7 +2,7 @@ import pandas as pd
 import time
 
 start = time.time()
-4
+
 years = range(1999,2019,1)
 
 for y in years:
