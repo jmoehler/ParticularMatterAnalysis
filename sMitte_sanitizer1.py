@@ -8,13 +8,11 @@ i=0
 o=0
 
 header = []
-
 # resultfile
-year = range(1987,2019,1)
+year = range(1987,1988,1)
 for y in year:
     with open('./data/StuttgartCsvDone/Halbstd-Werte-Stuttgart-Mitte-SZ_%d_D.csv' %(y),
         'w', newline='') as csvfile:
-        print(y)
         writer_csv = csv.writer(csvfile, delimiter=';')
         # lesefile
         for datafile in ['./data/StuttgartCsv/Halbstd-Werte-Stuttgart-Mitte-SZ_%d.csv' %(y)]:
@@ -50,28 +48,25 @@ for y in year:
                         # das Datum anpassen
                         date1 = datetime.strptime(dateStr, '%Y-%m-%d 00:00:00') 
                         row[0] = date1.strftime('%Y-%m-%d') 
-
-
+                        
                         # die Zeit anpassen
                         hTime = datetime.strptime(timeStr, '%H:%M:%S')
                         row[1] = hTime.strftime('%H:%M')
+
 
                     except: 
                         try:
                             # falls zeit so geschrieben ebenfalls anpassen
                             datetime.strptime(dateStr, '%m/%d/%y')
                             row[0] = date.strftime('%Y-%m-%d') 
-
+                      
     
                         except: 
-                            # letzte Zeile speichern ( um sie eventuell mit anderer Zeile zu verbinden)
+                            # alste zeile speichern ( um sie eventuell mit anderer Zeile zu verbinden)
                             prevRow = row
                             continue
-                    # alle legitimem Zeilen speichern
-                    writer_csv.writerow(row)
-
-                    # all diese Zeilen zählen
-                    o += 1
+    
+                print(y)
                     
             f.close()
 
