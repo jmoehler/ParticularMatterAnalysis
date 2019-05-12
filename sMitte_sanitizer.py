@@ -80,4 +80,4 @@ ende = time.time()
 diff = ende-start
 
 print ("wrote %d (of %d) rows" % (o,i))
-print("runtime: %.5fs" %(diff))
+print("runtime: %.2fs" %(diff))
