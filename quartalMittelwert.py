@@ -1,4 +1,3 @@
-import pathlib
 import csv
 import time
 import datetime
@@ -6,10 +5,10 @@ import datetime
 
 
 
-# die angaben
-year    = 2018               #year          
-sensor  =  299               #sensor
-quartal =    4             #quartal
+# die Angaben
+year    = 2018              #year          
+sensor  =  299              #sensor
+quartal =    4              #quartal
 
 
 # die Monate eines Quartals 
