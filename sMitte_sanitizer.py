@@ -53,20 +53,23 @@ for y in year:
                     try:
                         # das Datum anpassen
                         date1 = datetime.strptime(dateStr, '%Y-%m-%d %H:%M:%S') 
-                        row[0] = date1.strftime('%Y-%m-%d') 
+                        dateStr2 = date1.strftime('%Y-%m-%d') 
 
 
                         # die Zeit anpassen
                         hTime = datetime.strptime(timeStr, '%H:%M:%S')
-                        row[1] = hTime.strftime('%H:%M')
+                        
 
+                        row[0] = dateStr2 + " " + timeStr                      
                     except: 
                         try:
                             # falls zeit so geschrieben ebenfalls anpassen
+                            hTime = datetime.strptime(timeStr, '%H:%M:%S')
+                            
 
                             datetime.strptime(dateStr, '%m/%d/%y')
-                            row[0] = date.strftime('%Y-%m-%d') 
-
+                            dateStr3 = date.strftime('%Y-%m-%d') 
+                            row[0] = dateStr3 + " " + timeStr 
     
                         except: 
                             # letzte Zeile speichern ( um sie eventuell mit anderer Zeile zu verbinden)
