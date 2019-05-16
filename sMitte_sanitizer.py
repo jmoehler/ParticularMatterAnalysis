@@ -7,13 +7,16 @@ start = time.time()
 i=0
 o=0
 
-header = []
+
 
 # resultfile
 year = range(1987,2019,1)
 for y in year:
     with open('./data/StuttgartCsvDone/Halbstd-Werte-Stuttgart-Mitte-SZ_%d_D.csv' %(y),
         'w', newline='') as csvfile:
+
+        header = []
+
         print(y)
         writer_csv = csv.writer(csvfile, delimiter=';')
         # lesefile
@@ -37,6 +40,7 @@ for y in year:
 
                     # die Kopfzeilen zusammenfassen
                     if dateStr == "Datum":
+
                         for s in range(0, len(row)):
                             header.append(row[s] + "-" + prevRow[s])
                         
@@ -48,7 +52,7 @@ for y in year:
                     
                     try:
                         # das Datum anpassen
-                        date1 = datetime.strptime(dateStr, '%Y-%m-%d 00:00:00') 
+                        date1 = datetime.strptime(dateStr, '%Y-%m-%d %H:%M:%S') 
                         row[0] = date1.strftime('%Y-%m-%d') 
 
 
@@ -59,6 +63,7 @@ for y in year:
                     except: 
                         try:
                             # falls zeit so geschrieben ebenfalls anpassen
+
                             datetime.strptime(dateStr, '%m/%d/%y')
                             row[0] = date.strftime('%Y-%m-%d') 
 

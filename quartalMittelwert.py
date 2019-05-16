@@ -8,7 +8,7 @@ import datetime
 # die Angaben
 year    = 2018              #year          
 sensor  =  299              #sensor
-quartal =    4              #quartal
+quartal =    3              #quartal
 
 
 # die Monate eines Quartals 
