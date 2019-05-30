@@ -4,10 +4,10 @@ import time
 
 
 
-y = 2019                #year
-m = 1                  #month
-d = 1                  #day
-s = 299                 #sensorName
+y = 2017               #year
+m = 5                  #month
+d = 20                  #day
+s = 299                #sensorName
 
 path = "data/sensor_%d/%04d-%02d-%02d_sds011_sensor_%d.csv"  %(s,y,m,d,s)
 

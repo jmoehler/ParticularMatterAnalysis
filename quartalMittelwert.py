@@ -6,9 +6,9 @@ import datetime
 
 
 # die Angaben
-year    = 2018              #year          
+year    = 2017              #year          
 sensor  =  299              #sensor
-quartal =    3              #quartal
+quartal =    1              #quartal
 
 
 # die Monate eines Quartals 
@@ -82,7 +82,7 @@ for y in [year]:
                         sPM2_5.append(PM2_5)
                         
                 
-                    print(path)
+                    # print(path)
             except:
                 print("file %04d-%02d-%02d is not avalible" %(y,m,d))
                 
